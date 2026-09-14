@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071010">
+  <meta name="description" content="Report a match and follow the Champion's Path in The Bones of the Disir Queen.">
+  <title>Hall of Champions · The Bones of the Disir Queen®</title>
+  <link rel="canonical" href="https://www.disirqueen.com/hall-of-champions.html">
+  <link rel="icon" type="image/webp" href="assets/brand-logo-gold.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="hall-page">
+  <header class="site-header scrolled">
+    <a class="site-logo" href="index.html" aria-label="Return home"><img src="assets/brand-logo-gold.webp" alt="SU8 Diversified · Bones of the Disir Queen"></a>
+    <nav aria-label="Hall navigation"><a href="index.html">The Queen's Realm</a><a href="#report">Report Thy Judgment</a><a href="#path">Champion's Path</a></nav>
+  </header>
+  <main>
+    <section class="hall-hero">
+      <div>
+        <p class="eyebrow">The Queen's Global Record</p>
+        <h1>Hall of Champions</h1>
+        <p>No Champion Holds Fortune Forever.</p>
+      </div>
+      <img src="assets/queen-approved-crop.jpeg" alt="The approved Disir Queen portrait">
+    </section>
+
+    <section class="hall-intro">
+      <p>Play anywhere. Report the judgment. Rise through the ranks. Let the Queen remember the trinkets won—and the mortals defeated.</p>
+      <div class="judgment-note"><strong>Nothing posts instantly.</strong> Every match and photograph enters Pending Judgment before it can join the public record.</div>
+    </section>
+
+    <section class="report-wrap" id="report">
+      <form class="judgment-form" id="judgment-form">
+        <p class="eyebrow">Report Thy Judgment</p>
+        <h2>Enter the Queen's record.</h2>
+        <p class="form-help">Use public game names and a public venue, city, or event location. Never enter a home address.</p>
+        <div class="form-grid">
+          <label>Victor's Name *<input name="victor" required maxlength="40"></label>
+          <label>Failed Mortal *<input name="opponent" required maxlength="40"></label>
+          <label>Victor Score *<input name="victorScore" required type="number" min="0" max="999"></label>
+          <label>Opponent Score *<input name="opponentScore" required type="number" min="0" max="999"></label>
+          <label>Date Played *<input name="date" required type="date"></label>
+          <label>Game Type<select name="gameType"><option>Player Reported</option><option>Official Festival / SU8 Hosted</option></select></label>
+          <label class="wide">Location or Venue *<input name="location" required maxlength="80" placeholder="Festival, game shop, venue, or city"></label>
+          <label>State *<select name="state" required><option value="">Choose state</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option><option>Other / Outside U.S.</option></select></label>
+          <label class="wide">Trinket Wagered or Won<input name="trinket" maxlength="100" placeholder="A ring, coin, comb, necklace…"></label>
+          <label class="wide">Tale of the Victory<textarea name="tale" maxlength="240" placeholder="How did fortune turn?"></textarea></label>
+          <label class="wide upload">Upload the Signed Scroll, Trinket, or Victory Image<input name="photos" type="file" accept="image/*" multiple></label>
+        </div>
+        <fieldset class="proclamation-choice">
+          <legend>Victory Proclamation</legend>
+          <label class="check"><input id="proclamation" type="checkbox"> Send me a Victory Proclamation after this result is approved.</label>
+          <label id="email-field" hidden>Email for Delivery<input name="email" type="email" autocomplete="email" placeholder="champion@example.com"></label>
+          <p>An emailed keepsake bearing the victor's public game name, approved match details, and the Queen's judgment.</p>
+        </fieldset>
+        <label class="check consent"><input required type="checkbox"> I have permission to submit this result and any uploaded images for moderation and possible public display.</label>
+        <button class="button" type="submit">Send to Pending Judgment <span>→</span></button>
+        <div class="submission-message" id="submission-message" role="status"></div>
+      </form>
+
+      <aside class="champion-path" id="path">
+        <p class="eyebrow">The Champion's Path</p>
+        <h2>Fortune leaves marks.</h2>
+        <p>Approved wins count toward milestone recognition. Final coin/token designs and receive-or-purchase details will appear here when confirmed.</p>
+        <ol>
+          <li><b>10 Wins</b><span>Milestone token or coin placeholder</span></li>
+          <li><b>20 Wins</b><span>Milestone token or coin placeholder</span></li>
+          <li><b>50 Wins</b><span>Milestone token or coin placeholder</span></li>
+          <li class="century"><b>100 Wins</b><span>Century Victory Proclamation and a dedicated Hall of Champions website spotlight</span></li>
+        </ol>
+      </aside>
+    </section>
+    <div class="champion-trinkets" aria-hidden="true"><img src="assets/champion-trinkets.webp" alt=""></div>
+  </main>
+  <footer><div><span class="footer-title">The Bones of the Disir Queen<sup>®</sup></span><span>Official Queen of Eldrim</span></div><p>© <span id="year"></span> Stand Up 8 Diversified LLC</p></footer>
+  <script src="assets/config.js"></script>
+  <script src="assets/hall.js"></script>
+</body>
+</html>
