@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://www.disirqueen.com/sitemap.xml
+Disallow: /
