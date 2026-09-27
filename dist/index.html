@@ -13,8 +13,8 @@
     body { margin: 0; background: var(--ink); color: #f7f2e7; font-family: Georgia, "Times New Roman", serif; }
     .coming-soon { position: relative; min-height: 100svh; display: grid; place-items: center; overflow: hidden; isolation: isolate; padding: 2rem; }
     .coming-soon::before { content: ""; position: absolute; inset: 0; z-index: -3; background: url("assets/queen-guardian-hero.webp") center 38% / cover no-repeat; }
-    .coming-soon::after { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 50% 42%, rgba(1,10,12,.18), rgba(2,5,8,.72) 66%), linear-gradient(180deg, rgba(1,4,7,.38), rgba(1,4,7,.78)); }
-    .veil { position: absolute; inset: 0; z-index: -1; box-shadow: inset 0 0 9rem rgba(0,0,0,.9); pointer-events: none; }
+    .coming-soon::after { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(1,4,7,.04), rgba(1,4,7,.34)); }
+    .veil { position: absolute; inset: 0; z-index: -1; box-shadow: inset 0 0 9rem rgba(0,0,0,.18); pointer-events: none; }
     .panel { width: min(760px, 100%); text-align: center; padding: clamp(1.6rem, 4vw, 3.25rem); background: linear-gradient(180deg, rgba(4,9,12,.56), rgba(3,7,10,.78)); border: 1px solid rgba(230,185,93,.48); box-shadow: 0 1.5rem 5rem rgba(0,0,0,.58); backdrop-filter: blur(5px); }
     .brand { display: block; width: min(420px, 86%); max-height: 280px; object-fit: contain; margin: 0 auto 1.4rem; filter: drop-shadow(0 .55rem .8rem rgba(0,0,0,.8)); }
     .eyebrow { margin: 0 0 .8rem; color: var(--pale-gold); font: 700 clamp(.72rem,1.5vw,.92rem)/1.2 Arial, Helvetica, sans-serif; letter-spacing: .3em; text-transform: uppercase; }
