@@ -31,6 +31,14 @@
       .brand { width: min(170px,65%); max-height: 105px; margin-bottom: .8rem; }
       .divider { margin: .65rem auto; }
     }
+    .tale-button { display: block; width: 100%; margin: 1rem 0 0; padding: .8rem 1rem; border: 1px solid var(--gold); border-radius: .2rem; background: #e6b95d; color: #101316; font: 700 .95rem/1.3 Georgia, serif; cursor: pointer; }
+    .tale-button:hover { background: var(--pale-gold); }
+    .tale-button:focus-visible { outline: 3px solid #fff9e8; outline-offset: 3px; }
+    .tale-player { margin-top: 1rem; }
+    .tale-player[hidden] { display: none; }
+    .tale-still { display: block; width: 100%; height: auto; border: 1px solid rgba(230,185,93,.48); }
+    .tale-player audio { display: block; width: 100%; margin-top: .7rem; }
+    .tale-status { margin: .5rem 0 0; font: .85rem/1.4 Arial, sans-serif; }
   </style>
 </head>
 <body>
@@ -43,7 +51,30 @@
       <div class="divider" aria-hidden="true">◆</div>
       <p class="message">The Queen is gathering the runes. A new experience is taking shape beyond the veil.</p>
       <p class="tagline">No champion holds fortune forever.</p>
+      <button class="tale-button" id="tale-button" type="button" aria-expanded="false" aria-controls="tale-player">Listen to the Queen's Tale</button>
+      <div class="tale-player" id="tale-player" hidden>
+        <img class="tale-still" src="queens-tale-opening.webp" alt="Opening scene of the Queen's Tale" loading="lazy">
+        <audio id="tale-audio" controls preload="none" aria-label="The Queen's Tale" src="queens-tale.mp3"></audio>
+        <p class="tale-status" id="tale-status" role="status"></p>
+      </div>
     </section>
   </main>
+  <script>
+    const taleButton = document.getElementById('tale-button');
+    const talePlayer = document.getElementById('tale-player');
+    const taleAudio = document.getElementById('tale-audio');
+    const taleStatus = document.getElementById('tale-status');
+    taleButton.addEventListener('click', () => {
+      talePlayer.hidden = false;
+      taleButton.setAttribute('aria-expanded', 'true');
+      if (taleAudio.paused) {
+        taleAudio.play().catch(() => { taleStatus.textContent = 'Press play below to listen to the Queen’s Tale.'; });
+      } else { taleAudio.pause(); }
+    });
+    taleAudio.addEventListener('play', () => { taleButton.textContent = 'Pause the Queen’s Tale'; taleStatus.textContent = ''; });
+    taleAudio.addEventListener('pause', () => { taleButton.textContent = "Listen to the Queen's Tale"; });
+    taleAudio.addEventListener('ended', () => { taleButton.textContent = "Listen to the Queen's Tale"; });
+    taleAudio.addEventListener('error', () => { taleStatus.textContent = 'The audio could not load. Please try again.'; });
+  </script>
 </body>
 </html>
