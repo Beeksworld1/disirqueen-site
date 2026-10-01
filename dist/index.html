@@ -12,8 +12,8 @@
     html, body { min-height: 100%; }
     body { margin: 0; background: var(--ink); color: #f7f2e7; font-family: Georgia, "Times New Roman", serif; }
     .coming-soon { position: relative; min-height: 100svh; display: grid; align-items: end; justify-items: end; overflow: hidden; isolation: isolate; padding: 2rem; }
-    .coming-soon::before { content: ""; position: absolute; inset: 0; z-index: -3; background: url("assets/queen-guardian-hero.webp") center 38% / cover no-repeat; filter: brightness(1.22); }
-    .coming-soon::after { content: ""; position: absolute; inset: 0; z-index: -2; background: none; }
+    .coming-soon::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("assets/queen-guardian-hero.webp") center / contain no-repeat; filter: brightness(1.22); }
+    .coming-soon::after { content: ""; position: absolute; inset: 0; z-index: -3; background: url("assets/queen-guardian-hero.webp") center / cover no-repeat; filter: brightness(1.22) blur(16px); transform: scale(1.04); }
     .veil { position: absolute; inset: 0; z-index: -1; box-shadow: none; pointer-events: none; }
     .panel { width: min(390px, 100%); text-align: center; padding: 1.25rem; background: linear-gradient(180deg, rgba(4,9,12,.56), rgba(3,7,10,.78)); border: 1px solid rgba(230,185,93,.48); box-shadow: 0 .6rem 1.5rem rgba(0,0,0,.25); backdrop-filter: blur(5px); }
     .brand { display: block; width: min(200px, 65%); max-height: 125px; object-fit: contain; margin: 0 auto .65rem; filter: drop-shadow(0 .55rem .8rem rgba(0,0,0,.8)); }
@@ -26,12 +26,13 @@
     .tagline { margin: .8rem 0 0; color: var(--pale-gold); font: 700  .72rem/1.4 Arial, Helvetica, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
     @media (max-width: 640px) {
       .coming-soon { align-items: end; padding: 1rem; }
-      .coming-soon::before { background-position: 50% 20%; background-size: auto 76svh; background-repeat: no-repeat; }
+      .coming-soon::before { background-position: center top; background-size: contain; background-repeat: no-repeat; }
       .panel { margin-top: 62svh; padding: 1rem; backdrop-filter: blur(3px); }
       .brand { width: min(170px,65%); max-height: 105px; margin-bottom: .8rem; }
       .divider { margin: .65rem auto; }
     }
     .tale-button { display: block; width: 100%; margin: 1rem 0 0; padding: .8rem 1rem; border: 1px solid var(--gold); border-radius: .2rem; background: #e6b95d; color: #101316; font: 700 .95rem/1.3 Georgia, serif; cursor: pointer; }
+    a.tale-button { text-decoration: none; }
     .tale-button:hover { background: var(--pale-gold); }
     .tale-button:focus-visible { outline: 3px solid #fff9e8; outline-offset: 3px; }
     .tale-player { margin-top: 1rem; }
@@ -52,6 +53,7 @@
       <p class="message">The Queen is gathering the runes. A new experience is taking shape beyond the veil.</p>
       <p class="tagline">No champion holds fortune forever.</p>
       <button class="tale-button" id="tale-button" type="button" aria-expanded="false" aria-controls="tale-player">Listen to the Queen's Tale</button>
+      <a class="tale-button" href="https://www.su8diversified.com/" aria-label="Click here for more details about the Queen, the game, and who we are">Click here</a>
       <div class="tale-player" id="tale-player" hidden>
         <img class="tale-still" src="queens-tale-opening.webp" alt="Opening scene of the Queen's Tale" loading="lazy">
         <audio id="tale-audio" controls preload="none" aria-label="The Queen's Tale" src="queens-tale.mp3"></audio>
